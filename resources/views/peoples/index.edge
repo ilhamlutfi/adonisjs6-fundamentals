@@ -1,0 +1,19 @@
+@include('partials/_header')
+@pushOnceTo('css')
+  <style>
+    h1 {
+      color: red
+    }
+  </style>
+@end
+
+@pushOnceTo('js')
+  <script src="custom.js"></script>
+@end
+  <h1>Hello, world!</h1>
+
+  @component('components/button-href', { href: '/peoples/1', target: '_blank'})
+    <i class="fa-lock"></i>
+    <span> Login </span>
+  @end
+@include('partials/_footer')

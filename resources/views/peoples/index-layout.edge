@@ -1,0 +1,10 @@
+@layout.template()
+
+  @slot('css')
+    <link rel="stylesheet" href="custom.css">
+  @endslot
+
+  @slot('main')
+    <h1>Hello, world! {{ dashCase(title) }}</h1>
+  @endslot
+@end

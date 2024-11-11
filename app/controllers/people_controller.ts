@@ -4,7 +4,24 @@ export default class PeopleController {
   /**
    * Display a list of resource
    */
-  async index({}: HttpContext) {}
+  async index({ view }: HttpContext) {
+    const people = [
+      {
+        name: 'John Doe',
+        age: 30
+      },
+      {
+        name: 'Jane Doe',
+        age: 29
+      },
+    ]
+
+    return view.render('peoples/index-layout', {
+      data: people,
+      active: true,
+      title: 'List of Peoples'
+    })
+  }
 
   /**
    * Display form to create a new record
@@ -19,7 +36,11 @@ export default class PeopleController {
   /**
    * Show individual record
    */
-  async show({ params }: HttpContext) {}
+  async show({ params, view }: HttpContext) {
+    return view.render('peoples/show', {
+      id: params.id
+    })
+  }
 
   /**
    * Edit individual record

@@ -17,7 +17,7 @@ router.on('/').render('pages/home')
 router.get('/users', [UsersController, 'index'])
 router.get('/users/:id', [UsersController, 'show'])
 
-router.resource('people', PeopleController).as('peoples')
+router.resource('peoples', PeopleController).as('peoples')
 
 router.resource('students', StudentController).apiOnly()
 
